@@ -52,7 +52,7 @@ namespace SFAutomation.Steps
             }
             catch (Exception)
             {
-                // We will swallow any exceptions in the cleanup step.
+                // This will get any exceptions in the cleanup step.
             }
         }
     }

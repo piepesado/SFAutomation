@@ -63,6 +63,13 @@ namespace SFAutomation.Pages
             Assert.Equals(element.GetAttribute("value"), text);
         }
 
+        public void EnsurePageIsLoaded(string pageTitle)
+        {
+            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(120));
+            wait.Until(d => d.Title.Contains(pageTitle));
+            Thread.Sleep(2000);
+        }
+
         //This procedure is to be used when normal checkbox flow does not work
         //Html command sample:
         //"document.getElementById('chkTerms').click();"
